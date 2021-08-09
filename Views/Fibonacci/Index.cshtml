@@ -1,0 +1,25 @@
+﻿@model Fibonacci.Models.FibonacciModel;
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Even Fibonacci terms";
+}
+
+
+
+<h2>Even Fibonacci numbers</h2> 
+<div id ="center">
+    @using (Html.BeginForm())
+    { <fieldset > <legend style = "color:darkblue" > Enter Limit for Sum </legend>
+        @Html.TextBoxFor(m => m.limit, new { @class = "form-control" }) <br/> 
+        <input type = "submit" value = "Submit" name = "Enter" /> <br/> <br/> 
+    <h2 style = "color:darkblue" > @Html.Label("Result is :")
+        @Html.DisplayFor(m => m.Sum, new { @class = "form-control" }) </h2> </fieldset>
+        }
+    </div>
+<div class="alert alert-danger">
+    <p>@ViewBag.ErrorMessage</p>
+</div>
